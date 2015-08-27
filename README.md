@@ -3,8 +3,13 @@
     - RESTFul
     - Security
     - Sustainibility
-    - Resilient
-- to build the project, please build "spring-boot-exampleservice-rssr-parent"
+    - Resilience
+- project build:
+    - please build "spring-boot-exampleservice-rssr-parent"
+- project start:
+    - run ApplicationNRIT
+    - Within your browser enter "http://localhost:8080"
+    - Example Resource: http://localhost:8080/orderservice1_0/orders/1
 - module description:
     - spring-boot-exampleservice-rssr-parent: project parent
     - spring-boot-exampleservice-rssr-api: the api containing JaxRS annotations
