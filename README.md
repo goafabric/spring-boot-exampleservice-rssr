@@ -1,2 +1,12 @@
 # spring-boot-exampleservice-rssr
-an exampleservice that serves the rssr rules
+- an exampleservice that serves the rssr rules:
+    - RESTFul
+    - Security
+    - Sustainibility
+    - Resilient
+- to build the project, please build "spring-boot-exampleservice-rssr-parent"
+- module description:
+    - spring-boot-exampleservice-rssr-parent: project parent
+    - spring-boot-exampleservice-rssr-api: the api containing JaxRS annotations
+    - spring-boot-exampleservice-rssr-service: the service
+    - common-spring-service: common libraries that support the RSSR principles
