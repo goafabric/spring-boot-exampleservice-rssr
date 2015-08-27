@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <property name="encoderPattern" value="%d{ABSOLUTE} %-5p [%t] [%c] %m%n"/>
+    <property name="filePattern" value="%d{yyyy-MM-dd}.log.zip"/>
+
+
+    <!-- ============================== -->
+    <!-- Server LOG                     -->
+    <!-- ============================== -->
+
+    <appender name="SERVER_LOG" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>./log/server.log</file>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>${encoderPattern}</Pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>./log/server.${filePattern}</fileNamePattern>
+            <maxHistory>7</maxHistory>
+        </rollingPolicy>
+    </appender>
+
+    <appender name="SECURITY_LOG" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>./log/security.log</file>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>${encoderPattern}</Pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>./log/security.${filePattern}</fileNamePattern>
+            <maxHistory>7</maxHistory>
+        </rollingPolicy>
+    </appender>
+
+    <logger name="org.springframework.security" level="INFO" additivity="false">
+        <appender-ref ref="SECURITY_LOG"/>
+    </logger>
+
+    <!-- On INFO level, servo will post every x seconds that it
+         will poll for metrics. Thats why it's WARN here. -->
+    <logger name="com.netflix.servo" level="WARN" additivity="false">
+        <appender-ref ref="SERVER_LOG"/>
+    </logger>
+
+    <root level="INFO">
+        <appender-ref ref="SERVER_LOG"/>
+    </root>
+
+    <!-- ================================= -->
+    <!-- Application Log                   -->
+    <!-- ================================= -->
+
+    <appender name="APPLICATION_LOG" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>./log/application.log</file>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>${encoderPattern}</Pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>./log/application.${filePattern}</fileNamePattern>
+            <maxHistory>7</maxHistory>
+        </rollingPolicy>
+    </appender>
+
+    <appender name="AUDIT_LOG" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>./log/audit.log</file>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>${encoderPattern}</Pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>./log/audit.${filePattern}</fileNamePattern>
+            <maxHistory>7</maxHistory>
+        </rollingPolicy>
+    </appender>
+
+    <logger name="org.goafabric" level="INFO" additivity="false">
+        <appender-ref ref="APPLICATION_LOG"/>
+    </logger>
+
+    <logger name="AuditLog" level="INFO" additivity="false">
+        <appender-ref ref="AUDIT_LOG"/>
+    </logger>
+
+</configuration>

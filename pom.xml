@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.goafabric</groupId>
+    <artifactId>spring-boot-exampleservice-rssr-parent</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0.0-SNAPSHOT</version>
+
+    <modules>
+        <module>common-spring-service</module>
+        <module>spring-boot-exampleservice-rssr-api</module>
+        <module>spring-boot-exampleservice-rssr-service</module>
+    </modules>
+
+    <properties>
+        <compiler.source.version>1.7</compiler.source.version>
+        <compiler.target.version>1.7</compiler.target.version>
+        <sources.encoding>UTF-8</sources.encoding>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${compiler.source.version}</source>
+                    <target>${compiler.target.version}</target>
+                    <encoding>${sources.encoding}</encoding>
+                    <showDeprecation>true</showDeprecation>
+                    <showWarnings>true</showWarnings>
+                </configuration>
+            </plugin>
+        </plugins>
+
+    </build>
+
+</project>
