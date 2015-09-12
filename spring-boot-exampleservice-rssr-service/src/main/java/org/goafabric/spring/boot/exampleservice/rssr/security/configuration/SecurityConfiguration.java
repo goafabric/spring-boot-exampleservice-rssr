@@ -36,7 +36,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         httpSecurity.authorizeRequests()
                 .antMatchers(
                         "/management/hystrix.stream", "/hystrix/**", "/webjars/**", "/proxy.stream",
-                        "/management/info", "/management/health", "/management/metrics",
+                        "/management/**",
                         "/", "/welcome/**",
                         ExampleServiceConstants.ROOT_URL + "/application.wadl"
                 ).permitAll()

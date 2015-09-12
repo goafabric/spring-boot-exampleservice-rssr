@@ -17,7 +17,7 @@ public class ApplicationNRIT {
     public void test() throws InterruptedException {
         Application.main(new String[]{});
 
-        initHystrix();
+        //initHystrix();
 
         while (true) {
             Thread.sleep(1000);
