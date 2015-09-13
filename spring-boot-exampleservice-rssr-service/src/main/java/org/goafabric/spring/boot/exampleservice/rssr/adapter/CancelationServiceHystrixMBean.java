@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
  */
 
 @Component
-@ManagedResource(objectName = AdapterConstants.MBEAN_OBJECT_NAME + ":name=" + AdapterConstants.CANCELATION_SERVICE)
+@ManagedResource(objectName = AdapterConstants.MBEAN_OBJECT_NAME + ",name=" + AdapterConstants.CANCELATION_SERVICE)
 public class CancelationServiceHystrixMBean extends HystrixManager {
 
     @Override
