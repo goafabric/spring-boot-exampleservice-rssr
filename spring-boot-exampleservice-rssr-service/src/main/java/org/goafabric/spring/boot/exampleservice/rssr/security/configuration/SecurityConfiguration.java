@@ -1,6 +1,7 @@
 package org.goafabric.spring.boot.exampleservice.rssr.security.configuration;
 
 import org.goafabric.common.spring.service.security.AuditAspect;
+import org.goafabric.common.spring.service.security.annotation.EnableAudit;
 import org.goafabric.spring.boot.exampleservice.rssr.service.intf.constants.ExampleServiceConstants;
 import org.goafabric.spring.boot.exampleservice.rssr.service.intf.constants.VersionData;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,7 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
+@EnableAudit(loggerName = "AuditLog", applicationNameAndVersion = VersionData.APP_NAME_MAJOR_MINOR)
 @SuppressWarnings("PMD.SignatureDeclareThrowsException")
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
@@ -44,11 +46,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .and()
                 .httpBasic().and().csrf().disable()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-    }
-
-    @Bean
-    AuditAspect auditAspect() {
-        return new AuditAspect("AuditLog", VersionData.APP_NAME_MAJOR_MINOR);
     }
 
 }
