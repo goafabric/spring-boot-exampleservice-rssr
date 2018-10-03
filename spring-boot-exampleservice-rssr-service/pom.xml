@@ -12,7 +12,7 @@
     <artifactId>spring-boot-exampleservice-rssr-service</artifactId>
 
     <properties>
-        <java.version>1.7</java.version>
+        <java.version>1.8</java.version>
         <compiler.source.version>${java.version}</compiler.source.version>
         <compiler.target.version>${java.version}</compiler.target.version>
 
