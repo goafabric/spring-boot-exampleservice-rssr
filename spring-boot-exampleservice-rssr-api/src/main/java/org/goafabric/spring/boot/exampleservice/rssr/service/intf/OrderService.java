@@ -24,7 +24,7 @@ public interface OrderService {
      * <p/><b>REST Operation:</b><br> GET {@value #RESOURCE}/alive
      * @return A result object containing if the service is available.
      */
-    @Path("alive")
+    @Path("actions/alive")
     @GET
     BasicResult isAlive();
 
