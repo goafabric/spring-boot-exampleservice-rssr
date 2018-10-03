@@ -24,7 +24,6 @@ import javax.ws.rs.core.MediaType;
  * all supported operations on this resource. The actual resource name is defined as the @Path-annotation in the
  * ServiceInterface.
  * </p>
- * @author lthielmann
  */
 public final class JerseyProxyBuilder {
 
