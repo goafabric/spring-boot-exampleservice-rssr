@@ -25,7 +25,6 @@ import java.util.concurrent.TimeUnit;
  * The connectionpool is mandatory for the Resteasy implementation and it's recommended so set it to the size of the
  * allowed incoming connections to your application.
  * </p>
- * @author lthielmann
  */
 public final class ResteasyProxyBuilder {
 

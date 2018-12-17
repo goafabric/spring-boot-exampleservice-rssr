@@ -16,8 +16,8 @@
     </modules>
 
     <properties>
-        <compiler.source.version>1.7</compiler.source.version>
-        <compiler.target.version>1.7</compiler.target.version>
+        <compiler.source.version>1.8</compiler.source.version>
+        <compiler.target.version>1.8</compiler.target.version>
         <sources.encoding>UTF-8</sources.encoding>
     </properties>
 

@@ -6,7 +6,6 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.ext.ExceptionMapper;
 
 /**
- * @author lthielmann
  *         Date: 28.05.15
  *         Time: 14:48
  */

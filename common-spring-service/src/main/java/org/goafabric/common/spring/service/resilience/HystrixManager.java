@@ -13,7 +13,6 @@ import org.springframework.jmx.export.annotation.ManagedAttribute;
  * <p/>
  * Subclasses have to implement <code>getName()</code>, which will be used as the command-, group- and
  * threapool-key. Consequence is, every command has it's own threadpool and you can't group multiple commands.
- * @author lthielmann
  */
 public abstract class HystrixManager {
 
