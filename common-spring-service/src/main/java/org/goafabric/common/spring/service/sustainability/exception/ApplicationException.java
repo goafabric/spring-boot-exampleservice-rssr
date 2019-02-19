@@ -6,8 +6,6 @@ package org.goafabric.common.spring.service.sustainability.exception;
 * <p/>
 * All Exceptions should be RuntimeExceptions
 * (@see clean code)
-* Naming conventions are derived from the 1&1 SOA Board
-* (@see http://wiki.intranet.1and1.com/bin/view/DSL/EjbExceptions)
 *
 * @author amautsch
 */
